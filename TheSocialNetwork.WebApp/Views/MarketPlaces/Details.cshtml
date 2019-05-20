@@ -1,0 +1,101 @@
+﻿@model TheSocialNetwork.DomainModel.Entities.MarketPlace
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MarketPlace</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+
+    <h4>MarketPlace Posts</h4>
+    <hr />
+    @Html.ActionLink("Create Post", "Create", "Posts")
+    @foreach (var post in ViewBag.Posts)
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                <img src="@post.Sender.PhotoUrl" title="@post.Sender.Name" style="max-height:50px;width:auto" />
+            </dt>
+            <dd>
+                @post.Content<br>
+                @if (!string.IsNullOrEmpty((string)post.PhotoAdvertisement))
+                {
+                    <img src="@post.PhotoAdvertisement" title="@post.Sender.Name" style="max-height:300px;width:auto" />
+                }
+                else
+                {
+                    <p class="text-center text-danger">(sem imagem)</p>
+                }
+
+            </dd>
+            <dd>@Html.ActionLink("Create Comment", "Create", "Comments", new { postId = post.Id }, null)</dd>
+        </dl>
+
+        if (ViewBag.PostIdComments.ContainsKey(post.Id))
+        {
+            <hr />
+            foreach (var comment in ViewBag.PostIdComments[post.Id])
+            {
+                <dl class="dl-horizontal">
+                    <dt>
+                    </dt>
+
+                    <dd>
+                        <img src="@comment.Sender.PhotoUrl" title="@comment.Sender.Name" style="max-height:50px;width:auto" />
+                    </dd>
+
+                    <dd>
+                        @comment.Content
+                    </dd>
+                </dl>
+            }
+        }
+    }
+
+
+    <div>
+        <h4>MarketPlace Members</h4>
+        <hr />
+        @foreach (var member in ViewBag.Members)
+        {
+            <dl class="dl-horizontal">
+                <dd>
+                    @member.Name
+                </dd>
+                <dd>
+                    <img src="@member.PhotoUrl" style="max-height:200px;width:auto" />
+                </dd>
+                <dd>
+                    @Html.ActionLink("Details", "Details", new { id = member.Id })
+                </dd>
+            </dl>
+        }
+        @if (ViewBag.Members.Count == 0)
+        {
+            <dl class="dl-horizontal">
+                <dd>
+                    <h5>No Members... =(</h5>
+                </dd>
+            </dl>
+        }
+
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

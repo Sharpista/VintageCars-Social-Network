@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6981C853-93D8-417A-A8E5-60BB302BDBF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheSocialNetwork.DataAccess</RootNamespace>
+    <AssemblyName>TheSocialNetwork.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\SocialNetworkContext.cs" />
+    <Compile Include="Entities\ProfileAzureTableEntity.cs" />
+    <Compile Include="Migrations\201903301931397_init.cs" />
+    <Compile Include="Migrations\201903301931397_init.Designer.cs">
+      <DependentUpon>201903301931397_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903302027424_marketplace.cs" />
+    <Compile Include="Migrations\201903302027424_marketplace.Designer.cs">
+      <DependentUpon>201903302027424_marketplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903302034428_mk.cs" />
+    <Compile Include="Migrations\201903302034428_mk.Designer.cs">
+      <DependentUpon>201903302034428_mk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904030052008_att.cs" />
+    <Compile Include="Migrations\201904030052008_att.Designer.cs">
+      <DependentUpon>201904030052008_att.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904042326057_notification.cs" />
+    <Compile Include="Migrations\201904042326057_notification.Designer.cs">
+      <DependentUpon>201904042326057_notification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904042355478_atualização.cs" />
+    <Compile Include="Migrations\201904042355478_atualização.Designer.cs">
+      <DependentUpon>201904042355478_atualização.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904060029031_procedure.cs" />
+    <Compile Include="Migrations\201904060029031_procedure.Designer.cs">
+      <DependentUpon>201904060029031_procedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\NotificationAzureQueueRepository.cs" />
+    <Compile Include="Repositories\NotificationEntityFrameworkRepository.cs" />
+    <Compile Include="Repositories\PhotoAlbumEntityFrameworkRepository.cs" />
+    <Compile Include="Repositories\PhotoAzureBlobRepository.cs" />
+    <Compile Include="Repositories\PhotoLocalFileRepository.cs" />
+    <Compile Include="Repositories\PhotoStoreProcedure.cs" />
+    <Compile Include="Repositories\PostEntityFrameworkRepository.cs" />
+    <Compile Include="Repositories\ProfileEntityFrameworkRepository.cs" />
+    <Compile Include="Repositories\ProfileSqlServerRepository.cs" />
+    <Compile Include="Repositories\ProfileStoredProcedureRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheSocialNetwork.AzureStorageAccount\TheSocialNetwork.AzureStorageAccount.csproj">
+      <Project>{5FF77DFE-FC30-4F65-804C-1EBE2D1D1826}</Project>
+      <Name>TheSocialNetwork.AzureStorageAccount</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheSocialNetwork.DomainModel\TheSocialNetwork.DomainModel.csproj">
+      <Project>{A6EE1A28-54AF-43C8-A56C-F83AA4897CF8}</Project>
+      <Name>TheSocialNetwork.DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903301931397_init.resx">
+      <DependentUpon>201903301931397_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903302027424_marketplace.resx">
+      <DependentUpon>201903302027424_marketplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903302034428_mk.resx">
+      <DependentUpon>201903302034428_mk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904030052008_att.resx">
+      <DependentUpon>201904030052008_att.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904042326057_notification.resx">
+      <DependentUpon>201904042326057_notification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904042355478_atualização.resx">
+      <DependentUpon>201904042355478_atualização.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904060029031_procedure.resx">
+      <DependentUpon>201904060029031_procedure.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

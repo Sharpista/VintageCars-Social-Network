@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TheSocialNetwork.WebApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PostWebApiBaseURI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://thesocialnetworkpostwebapi2.azurewebsites.net</Value>
+    </Setting>
+    <Setting Name="ProfileWebApiBaseURI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://thesocialnetworkprofilewebap1.azurewebsites.net</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TheSocialNetwork.AzureStorageAccount.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StorageAccountConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DefaultEndpointsProtocol=https;AccountName=breweirestorageaccount;AccountKey=HiwcX/+3kxrK0tR/WjRo6uHqKMedtgbjaeSwPwLwAHdURh/EooMbjE1UKTQsP4O4xHAHM/ZgqDJbM6ZcQKr+Vw==;EndpointSuffix=core.windows.net</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
